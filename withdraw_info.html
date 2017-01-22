@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心_提现</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content withdraw">
+			<div class="tip">
+				<p>支付宝账户</p>
+				<p>7897777779777</p>
+			</div>
+			<form class="mui-input-group con">
+					<div class="mui-input-row ub ub-ac">
+						<label class="ub">可提取金额</label>
+						<div class="ub-f1 money">333元</div>
+					</div>
+					<div class="mui-input-row ub">
+						<label class="ub">提取金额</label>
+						<input type="text" class="ub-f1" placeholder="请输入可提取金额">
+					</div>
+				</form>
+				<button type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="return false;">确认</button>
+				
+				<p class="tail-tip">
+					<span class="mui-icon mui-icon-info-filled"></span>
+					提取处理规则
+				</p>
+		</div>
+
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+	</script>
+
+</html>

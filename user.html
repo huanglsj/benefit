@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content index-mui-content">
+			<div class="user">
+				<div class="head">
+					<div class="head-top">
+						<a href="user_info.html">
+							<div class="head-img">
+								<img src="img/logo.png">
+							</div>
+							<div class="head-name">黄哈哈</div>
+						</a>
+					</div>
+					<div class="head-bottom">
+						<ul class="ub head-bottom-menu">
+							<li>
+								<a href="user_task.html">
+									<i class="mui-icon mui-icon-list"></i>
+									<div>我的任务</div>
+								</a>
+							</li>
+							<li>
+								<a href="user_reward.html">
+									<i class="iconfont icon-qian"></i>
+									<div>我的奖励</div>
+								</a>
+							</li>
+							<li>
+								<a href="withdraw.html">
+									<i class="iconfont icon-lianjie"></i>
+									<div>体现绑定</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<ul class="mui-table-view user-ul-menu">
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="my_invite.html">
+							<i class="mui-icon-extra mui-icon-extra-addpeople"></i>我的邀请
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-navigate-right" href="invite_friend.html">
+							<i class="mui-icon-extra mui-icon-extra-share"></i>邀请朋友
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<nav class="mui-bar mui-bar-tab benefit-footer">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon iconfont icon-renwu"></span>
+				<span class="mui-tab-label">任务专区</span>
+			</a>
+			<a class="mui-tab-item" href="reward.html">
+				<span class="mui-icon iconfont icon-card"></span>
+				<span class="mui-tab-label">申请奖励</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="user.html">
+				<span class="mui-icon iconfont icon-geren"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".benefit-footer").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+
+		mui(".head-bottom-menu").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+		
+		mui(".head-top").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+		
+		mui(".user-ul-menu").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+		
+		
+
+		var addImage = function(obj) {
+			var id = $(obj).attr("id");
+			var img = $("#showImg");
+			new imageUpload({
+				upBtn: id, //选择文件控件ID
+				divShow: "", //展示图片的div
+				imgShow: "", //展示图片的img
+				uploadUrl: '/up/upload/image',
+				fileSize: 10 * 1024 * 1024,
+				init: function() {
+					loading();
+				},
+				callBack: function(status, msg) {
+					layer.closeAll();
+					$("#showImgDiv").show();
+					img.attr("src", msg.res.host + msg.res.icon_url);
+					img.attr("data-url", msg.res.imgFile);
+					img.attr("data-show", msg.res.host + msg.res.imgFile);
+				}
+			});
+		}
+	</script>
+
+</html>

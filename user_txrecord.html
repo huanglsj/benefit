@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心_提现记录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="nav-head ub">
+				<a href="user_reward.html">
+					<span>当月奖励</span>
+				</a>
+				<a href="user_txrecord.html" class="active">
+					<span>提现记录</span>
+				</a>
+			</div>
+			<ul class="record-list">
+				<li class="ub">
+					<div class="img">
+						<img src="img/logo.png">
+					</div>
+					<div class="con ub-f1 ub ub-pc ub-ver">
+						<p>
+							<span class="money">-7187元</span>
+							<span class="type">提取</span>
+						</p>
+						<p class="time">2016-12-12 10:10</p>
+					</div>
+					<span class="msg">成功</span>
+				</li>
+				<li class="ub">
+					<div class="img">
+						<img src="img/logo.png">
+					</div>
+					<div class="con ub-f1 ub ub-pc ub-ver">
+						<p>
+							<span class="money">-7187元</span>
+							<span class="type">提取</span>
+						</p>
+						<p class="time">2016-12-12 10:10</p>
+					</div>
+					<span class="msg">成功</span>
+				</li>
+				<li class="ub">
+					<div class="img">
+						<img src="img/logo.png">
+					</div>
+					<div class="con ub-f1 ub ub-pc ub-ver">
+						<p>
+							<span class="money">-7187元</span>
+							<span class="type">提取</span>
+						</p>
+						<p class="time">2016-12-12 10:10</p>
+					</div>
+					<span class="msg">成功</span>
+				</li>
+			</ul>
+		</div>
+
+		
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+	</script>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_申请奖励</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content index-mui-content">
+			<div class="reward">
+				<div class="title">
+					<div class="line">信息核对</div>
+				</div>
+				<div class="con">
+					<form class="mui-input-group reward-form">
+						<div class="mui-input-row ub">
+							<label class="ub">产品任务</label>
+							<input type="text" class="ub-f1 mui-input-clear" placeholder="产品任务">
+						</div>
+						<div class="mui-input-row ub">
+							<label class="ub">注册手机</label>
+							<input type="text" class="ub-f1 mui-input-clear" placeholder="注册手机">
+						</div>
+						<div class="mui-input-row ub">
+							<label class="ub">注册邮箱</label>
+							<input type="text" class="ub-f1 mui-input-clear" placeholder="注册邮箱">
+						</div>
+						<div class="mui-input-row ub">
+							<label class="ub">注册身份证</label>
+							<input type="text" class="ub-f1 mui-input-clear" placeholder="注册身份证">
+						</div>
+						<div class="mui-input-row ub">
+							<label class="ub">注册微信号</label>
+							<input type="text" class="ub-f1 mui-input-clear" placeholder="注册微信号">
+						</div>
+						<div class="mui-input-row ub ub-ac reward-row-btn">
+							<label class="ub">截图</label>
+							<button type="button" class="mui-btn mui-btn-primary" onclick="return false;">上传</button>
+							<input type="file" accept="image/*" name="file" class="file ub ub-f1" id="file" onclick="addImage(this)" />
+						</div>
+						<div class="img" id="showImgDiv">
+							<img id="showImg">
+						</div>
+					</form>
+					<a class="deal">同意《推利得隐私保护协议》</a>
+
+					<div class="reward-btn">
+						<button class="mui-btn mui-btn-block mui-btn-primary">提交</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<nav class="mui-bar mui-bar-tab benefit-footer">
+			<a class="mui-tab-item" href="index.html">
+				<span class="mui-icon iconfont icon-renwu"></span>
+				<span class="mui-tab-label">任务专区</span>
+			</a>
+			<a class="mui-tab-item mui-active" href="reward.html">
+				<span class="mui-icon iconfont icon-card"></span>
+				<span class="mui-tab-label">申请奖励</span>
+			</a>
+			<a class="mui-tab-item" href="user.html">
+				<span class="mui-icon iconfont icon-geren"></span>
+				<span class="mui-tab-label">个人中心</span>
+			</a>
+		</nav>
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".benefit-footer").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+
+		var addImage = function(obj) {
+			var id = $(obj).attr("id");
+			var img = $("#showImg");
+			new imageUpload({
+				upBtn: id, //选择文件控件ID
+				divShow: "", //展示图片的div
+				imgShow: "", //展示图片的img
+				uploadUrl: '/up/upload/image',
+				fileSize: 10 * 1024 * 1024,
+				init: function() {
+					loading();
+				},
+				callBack: function(status, msg) {
+					layer.closeAll();
+					$("#showImgDiv").show();
+					img.attr("src", msg.res.host + msg.res.icon_url);
+					img.attr("data-url", msg.res.imgFile);
+					img.attr("data-show", msg.res.host + msg.res.imgFile);
+				}
+			});
+		}
+	</script>
+
+</html>

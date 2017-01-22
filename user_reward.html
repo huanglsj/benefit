@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心_奖励</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="nav-head ub">
+				<a href="user_reward.html" class="active">
+					<span>当月奖励</span>
+				</a>
+				<a href="user_txrecord.html">
+					<span>提现记录</span>
+				</a>
+			</div>
+			<div class="reward-con">
+				<div class="same-month">
+					<div class="img">
+						<img src="img/logo.png">
+					</div>
+					<div class="list">
+						<span>当月奖励</span>
+						<span>￥200</span>
+					</div>
+					<div class="list">
+						<span>当月提现</span>
+						<span>￥200</span>
+					</div>
+					<button id="withdraw" class="mui-btn mui-btn-block mui-btn-primary">提  现</button>
+				</div>
+			</div>
+		</div>
+
+		
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+		
+		$(document).on("tap","#withdraw",function(){
+			mui.openWindow({
+				id: 'withdraw_info.html',
+				url: 'withdraw_info.html'
+			});
+		})
+	</script>
+
+</html>

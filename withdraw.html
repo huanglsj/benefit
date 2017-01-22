@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心_提现</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content withdraw">
+			<form class="mui-input-group">
+					<div class="mui-input-row ub">
+						<label class="ub">支付宝账号</label>
+						<input type="text" class="ub-f1" placeholder="支付宝账号">
+					</div>
+					<div class="mui-input-row ub">
+						<label class="ub">收款人姓名</label>
+						<input type="text" class="ub-f1" placeholder="收款人姓名">
+					</div>
+				</form>
+				<button type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="return false;">确认</button>
+		</div>
+
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+	</script>
+
+</html>

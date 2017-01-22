@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_任务详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="task-details-head">
+			<ul class="task-list">
+				<li>
+					<a href="" class="ub">
+						<div class="ub left ub-f1">
+							<div class="img">
+								<img src="img/60x60.gif">
+							</div>
+							<div class="con ub-f1">
+								<div class="title ut-s">京东商城京东商城京东商城京东商城</div>
+								<div>黄哈哈</div>
+								<div class="ut-s">2016-12-02</div>
+							</div>
+						</div>
+						<div class="right ub ub-ac ub-pc">
+							￥30
+						</div>
+					</a>
+				</li>
+				</ul>
+				<div>
+					<button type="button" class="mui-btn mui-btn-block mui-btn-primary" onclick="return false;">下载安装</button>
+				</div>
+		</div>
+		
+		<div class="task-details-setp">
+			<div class="list">
+				<div class="title">
+					<span></span>
+					<span>任务步骤</span>
+				</div>
+				<div class="con">
+					<ul>
+						<li>今天我们来揭秘一下他们的素材来源</li>
+						<li>这当中有网站，PSD素材站，有高清图片网站</li>
+						<li>有收集UI元素的博客，有视觉稿合集</li>
+						<li>这些免费的素材就是他们的灵感库</li>
+						<li>他们可能看起来距离“伟大”的设计有点距离</li>
+					</ul>
+				</div>
+			</div>
+			<div class="list">
+				<div class="title">
+					<span></span>
+					<span>申请收益提交材料</span>
+				</div>
+				<div class="con">
+					<ul>
+						<li>今天我们来揭秘一下他们的素材来源</li>
+						<li>这当中有网站，PSD素材站，有高清图片网站</li>
+						<li>有收集UI元素的博客，有视觉稿合集</li>
+						<li>这些免费的素材就是他们的灵感库</li>
+						<li>他们可能看起来距离“伟大”的设计有点距离</li>
+						<li>截图1，发表佳作的大神们都是在哪找</li>
+						<li class="img"><img src="img/index.png"></li>
+						<li>截图2，发表佳作的大神们都是在哪找</li>
+						<li class="img"><img src="img/index.png"></li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+	</script>
+
+</html>

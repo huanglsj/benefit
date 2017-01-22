@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推利得_个人中心_账户信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/ui-box.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="mui-content user-info">
+			<div class="ub ub-ac info-head">
+				<label>头像</label>
+				<div class="ub-f1">
+					<img src="img/logo.png">
+				</div>
+			</div>
+			<form class="mui-input-group">
+				<div class="mui-input-row ub">
+					<label class="ub">姓名</label>
+					<input type="text" class="ub-f1" placeholder="姓名">
+				</div>
+				<div class="mui-input-row ub">
+					<label class="ub">昵称</label>
+					<input type="text" class="ub-f1" placeholder="昵称">
+				</div>
+				<div class="mui-input-row ub">
+					<label class="ub">手机号</label>
+					<input type="text" class="ub-f1" placeholder="手机号">
+				</div>
+			</form>
+			<p class="tip">*以上信息填写后不可作第二次修改，请认真填写</p>
+		</div>
+
+	</body>
+
+	<script src="js/mui.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/imageUpload.js"></script>
+	<script type="text/javascript">
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+
+		mui(".nav-head").on('tap', 'a', function() {
+			var url = this.getAttribute("href");
+			mui.openWindow({
+				id: url,
+				url: url
+			});
+		});
+	</script>
+
+</html>
